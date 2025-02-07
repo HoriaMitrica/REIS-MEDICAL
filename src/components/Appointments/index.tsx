@@ -1,19 +1,21 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import { registerLocale } from "react-datepicker";
-import { ro } from "date-fns/locale/ro"; // Romanian locale import
+import { ro } from "date-fns/locale/ro";
 import Modal from "react-modal";
+import emailjs from "@emailjs/browser"; 
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./style.module.scss";
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "../../cosntants/constants";
 
 Modal.setAppElement("#root");
-
 registerLocale("ro", ro);
 
 const Appointments = () => {
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
     const [selectedHour, setSelectedHour] = useState<string | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         phone: "",
         name: "",
@@ -40,18 +42,38 @@ const Appointments = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
         if (!selectedDate || !selectedHour || !formData.phone || !formData.name || !formData.email) {
-            alert("Please fill in all required fields.");
+            alert("Nu ați completat toate informațiile neceasre");
             return;
         }
-        console.log("Appointment submitted:", {
-            ...formData,
+
+        setLoading(true);
+
+        const templateParams = {
+            phone: formData.phone,
+            name: formData.name,
+            email: formData.email,
+            comments: formData.comments || "N/A",
             date: selectedDate.toLocaleDateString("ro-RO"),
             hour: selectedHour,
-        });
-        alert("Appointment booked successfully!");
+        };
+
+        try {
+            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
+            alert("Programarea a fost făcută cu succes");
+
+            setFormData({ phone: "", name: "", email: "", comments: "" });
+            setSelectedDate(null);
+            setSelectedHour(null);
+        } catch (error) {
+            console.error("Email error:", error);
+            alert("Ceva nu a mers bine, mai încercați odată");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -114,8 +136,12 @@ const Appointments = () => {
                     </p>
                 )}
 
-                <button type="submit">Rezervați programarea</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? "Se procesează..." : "Rezervați programarea"}
+                </button>
             </form>
+
+            {loading && <div className={style.loadingOverlay}>Se procesează...</div>}
 
             <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} className={style.modal}>
                 <h3>{selectedDate ? selectedDate.toLocaleDateString("ro-RO") : "Selectați o oră"}</h3>
