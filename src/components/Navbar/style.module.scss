@@ -1,27 +1,31 @@
-$navColor: #418d42;
-$hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
+@import "/src/style/globalVariables.scss";
 
 .navbar {
     width: 100%;
     background-color: $navColor;
     position: relative;
-    padding: 10px 0;
 }
 
 .navList {
     display: flex;
-    justify-content: flex-start; // Align to the left
+    justify-content: flex-start;
     gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
-    max-width: 1200px; // Control max width
-    margin-left: auto; // Align with the logo from header
+    max-width: 1200px;
+    margin-left: auto;
 }
 
 .navItem {
     position: relative;
-
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin:5px;
+    &:not(:last-child) {
+        border-right: 0.5px solid rgba(0, 0, 0, 1); // Light separator
+    }
     a {
         text-decoration: none;
         color: white;
@@ -32,7 +36,6 @@ $hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
         position: relative;
         transition: color 0.3s ease;
 
-        /* Hover effect from top to bottom */
         &::after {
             content: "";
             position: absolute;
@@ -44,7 +47,6 @@ $hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
             transition: height 0.3s ease-in-out;
         }
 
-        /* Hover effect from bottom to top */
         &::before {
             content: "";
             position: absolute;
@@ -69,7 +71,6 @@ $hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
         }
     }
 
-    /* Show dropdown on hover */
     &:hover .dropdown {
         opacity: 1;
         transform: translateY(0);
@@ -77,7 +78,6 @@ $hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
     }
 }
 
-/* Dropdown Styling with Animation */
 .dropdown {
     position: absolute;
     top: 100%;
@@ -91,8 +91,6 @@ $hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
     border-radius: 5px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
-
-    /* Initially hidden */
     opacity: 0;
     transform: translateY(-10px);
     visibility: hidden;
