@@ -9,7 +9,6 @@
 .navList {
     display: flex;
     justify-content: flex-start;
-    gap: 20px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -59,11 +58,11 @@
         }
 
         &:hover::after {
-            height: 50%;
+            height: 100%;
         }
 
         &:hover::before {
-            height: 50%;
+            height: 100%;
         }
 
         &:hover {

@@ -4,18 +4,24 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Header from './components/Header';
+import RightSidePage from './components/RightSidePage/RightSide';
+import "./index.scss";
 
 export default function Router() {
-
   return (
     <BrowserRouter>
       <Header />
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <div className="main-container">
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
 
-      </Routes>
+        <RightSidePage />
+      </div>
 
       <Footer />
     </BrowserRouter>
@@ -30,4 +36,3 @@ if (rootElement) {
 } else {
   console.error('Root element not found');
 }
-
