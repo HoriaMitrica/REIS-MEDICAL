@@ -1,0 +1,114 @@
+$navColor: #418d42;
+$hoverColor: rgba(255, 255, 255, 0.1); // Semi-transparent white hover effect
+
+.navbar {
+    width: 100%;
+    background-color: $navColor;
+    position: relative;
+    padding: 10px 0;
+}
+
+.navList {
+    display: flex;
+    justify-content: flex-start; // Align to the left
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1200px; // Control max width
+    margin-left: auto; // Align with the logo from header
+}
+
+.navItem {
+    position: relative;
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 15px 20px;
+        display: block;
+        position: relative;
+        transition: color 0.3s ease;
+
+        /* Hover effect from top to bottom */
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 0%;
+            background-color: $hoverColor;
+            transition: height 0.3s ease-in-out;
+        }
+
+        /* Hover effect from bottom to top */
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0%;
+            background-color: $hoverColor;
+            transition: height 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+            height: 50%;
+        }
+
+        &:hover::before {
+            height: 50%;
+        }
+
+        &:hover {
+            color: #f8f8f8;
+        }
+    }
+
+    /* Show dropdown on hover */
+    &:hover .dropdown {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+/* Dropdown Styling with Animation */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $navColor;
+    list-style: none;
+    padding: 0;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    /* Initially hidden */
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+
+    li {
+        padding: 10px;
+        transition: background-color 0.3s;
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
