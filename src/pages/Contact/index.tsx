@@ -2,7 +2,8 @@ import style from "./style.module.scss";
 
 const Contact = () => {
     return (
-        <div className={style.contactPage}>
+        <div className={`${style.contactPage} main-content`}>
+
             <h2>Contactați-ne</h2>
             <p>Pentru informații, vă rugăm să ne contactați telefonic sau pe email:</p>
 

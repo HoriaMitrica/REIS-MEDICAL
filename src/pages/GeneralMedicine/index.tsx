@@ -2,7 +2,8 @@ import style from "./style.module.scss";
 
 const GeneralMedicine = () => {
     return (
-        <div className={style.generalMedicine}>
+        <div className={`${style.generalMedicine} main-content`}>
+
             <h2>Medicină Generală</h2>
 
             <p>

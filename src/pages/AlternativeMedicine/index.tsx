@@ -2,7 +2,8 @@ import style from "./style.module.scss";
 
 const AlternativeMedicine = () => {
     return (
-        <div className={style.alternativeMedicine}>
+        <div className={`${style.alternativeMedicine} main-content`}>
+
             <h2>Medicină Alternativă</h2>
 
             <p>

@@ -14,7 +14,8 @@ const PreventionPrograms = () => {
     }, []);
 
     return (
-        <div className={style.preventionPrograms}>
+        <div className={`${style.preventionPrograms} main-content`}>
+
             <h2>Programe de Prevenție</h2>
             <p className={style.description}>
                 Preocuparea pentru prevenirea îmbolnăvirilor a dus la crearea programelor de prevenție care se desfășoară în cadrul Reis Medical.

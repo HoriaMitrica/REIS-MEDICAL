@@ -9,7 +9,7 @@ const Card = ({ title, description, image, to }: CardProps) => {
             <img src={image} alt={title} className={style.image} />
             <div className={style.cardContent}>
                 <p>{description}</p>
-                <Link to={to} className={style.button}>
+                <Link to={to} className="button">
                     Mai mult
                 </Link>
             </div>

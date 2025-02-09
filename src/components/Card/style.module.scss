@@ -36,25 +36,4 @@
         margin-bottom: 10px;
         color: #418d42;
     }
-
-    p {
-        font-size: 1rem;
-        color: #555;
-        margin-bottom: auto;
-    }
-
-    .button {
-        background: #418d42;
-        color: white;
-        padding: 10px 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background 0.3s ease;
-        font-weight: bold;
-        margin-top: 15px; 
-
-        &:hover {
-            background: #357a35;
-        }
-    }
 }

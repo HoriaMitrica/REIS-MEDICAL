@@ -2,7 +2,8 @@ import style from "./style.module.scss";
 
 const AboutUs = () => {
     return (
-        <div className={style.aboutUs}>
+        <div className={`${style.aboutUs} main-content`}>
+
             <img src="/photos/reis_medical.jpg" alt="Despre noi" className={style.image} />
             <div className={style.text}>
                 <h2>Despre Noi</h2>

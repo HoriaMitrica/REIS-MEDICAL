@@ -2,7 +2,8 @@ import style from "./style.module.scss";
 
 const Promotions = () => {
     return (
-        <div className={style.promotions}>
+        <div className={`${style.promotions} main-content`}>
+
             <h2>Diagnostic noninvaziv prin biorezonanţă</h2>
             <p>
                 Semnalele undelor electromagnetice emise de corpul uman reprezintă starea specifică a organismului din acel moment şi

@@ -19,7 +19,8 @@ const MedicalServices = () => {
       }, []);
 
     return (
-        <div className={style.medicalServices}>
+        <div className={`${style.medicalServices} main-content`}>
+
             <h2>Servicii Medicale</h2>
             <div className={style.cardContainer}>
                 {services.map((service, index) => (

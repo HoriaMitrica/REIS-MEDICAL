@@ -2,7 +2,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
 import Header from './components/Header';
 import RightSidePage from './components/RightSidePage/RightSide';
 import "./index.scss";
@@ -15,6 +14,11 @@ import OccupationalMedicine from './pages/OccupationalMedicine';
 import GeneralMedicine from './pages/GeneralMedicine';
 import AlternativeMedicine from './pages/AlternativeMedicine';
 import LabTests from './pages/LabTests';
+import Diets from './pages/Diets';
+import WeightControl from './pages/WeightControl';
+import BreastCancer from './pages/BreastCancer';
+import FirstAid from './pages/FirstAid';
+import Diabetes from './pages/Diabetes';
 
 export default function Router() {
   return (
@@ -25,7 +29,7 @@ export default function Router() {
       <div className="main-container">
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<AboutUs />} />
             <Route path="/despre-noi" element={<AboutUs />} />
             <Route path="/servicii-medicale" element={<MedicalServices />} />
 
@@ -34,7 +38,14 @@ export default function Router() {
             <Route path="/servicii-medicale/medicina-alternativa" element={<AlternativeMedicine />} />
             <Route path="/servicii-medicale/analize-de-laborator" element={<LabTests />} />
 
-            <Route path="/programe-de-preventie" element={<PreventionPrograms />} />
+            <Route path="/programe-preventie" element={<PreventionPrograms />} />
+
+            <Route path="/programe-preventie/regimuri-alimentare" element={<Diets />} />
+            <Route path="/programe-preventie/control-al-greutatii" element={<WeightControl />} />
+            <Route path="/programe-preventie/cancer-san" element={<BreastCancer />} />
+            <Route path="/programe-preventie/primul-ajutor" element={<FirstAid />} />
+            <Route path="/programe-preventie/diabet-zaharat" element={<Diabetes />} />
+
             <Route path="/promotii" element={<Promotions />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

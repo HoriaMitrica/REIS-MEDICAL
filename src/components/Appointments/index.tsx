@@ -138,7 +138,7 @@ const Appointments = () => {
                     </p>
                 )}
 
-                <button type="submit" disabled={loading}>
+                <button className="button" type="submit" disabled={loading}>
                     {loading ? "Se procesează..." : "Rezervați programarea"}
                 </button>
             </form>

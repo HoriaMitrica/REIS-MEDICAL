@@ -23,7 +23,8 @@ const LabTests = () => {
     };
 
     return (
-        <div className={style.labTests}>
+        <div className={`${style.labTests} main-content`}>
+
             <h2>Analize de Laborator</h2>
             <p>
                 Nu poți avea grijă de oameni dacă nu poți afla cu ce probleme se confruntă. De aceea, cu ajutorul

@@ -9,7 +9,7 @@
         "title": "Program de control al greutății",
         "description": "Setarea unor principii de viata sanatoase, care au ca rezultat atingerea si mentinerea greutatii ideale...",
         "image": "/photos/control_al_greutatii.jpg",
-        "to": "/programe-preventie/control-greutate"
+        "to": "/programe-preventie/control-al-greutatii"
     },
 
     {
@@ -28,6 +28,6 @@
         "title": "Consiliere regim de viață in diabetul zaharat",
         "description": "Diabetul zaharat este o afecțiune cronică care poate să apară la vârste înaintate, dar care își face loc tot mai devreme la adultul tânăr...",
         "image": "/photos/consiliere_diabet.jpg",
-        "to": "/programe-preventie/diabet"
+        "to": "/programe-preventie/diabet-zaharat"
     }
 ]

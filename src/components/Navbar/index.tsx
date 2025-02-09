@@ -26,7 +26,7 @@ const Navbar = () => {
                     )}
                 </li>
 
-                <li className={style.navItem}><Link to="/programe-de-preventie">Programe de Prevenție</Link></li>
+                <li className={style.navItem}><Link to="/programe-preventie">Programe de Prevenție</Link></li>
                 <li className={style.navItem}><Link to="/promotii">Promoții</Link></li>
                 <li className={style.navItem}><Link to="/contact">Contact</Link></li>
             </ul>
