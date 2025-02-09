@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Header from './components/Header';
 import RightSidePage from './components/RightSidePage/RightSide';
 import "./index.scss";
+import Contact from './pages/Contact';
+import AboutUs from './pages/AboutUs';
 
 export default function Router() {
   return (
@@ -17,6 +19,8 @@ export default function Router() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/despre-noi" element={<AboutUs />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
 
