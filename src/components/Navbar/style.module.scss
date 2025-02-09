@@ -1,8 +1,8 @@
-@import "/src/style/globalVariables.scss";
+@forward "/src/style/globalVariables.scss";
 
 .navbar {
     width: 100%;
-    background-color: $navColor;
+    background-color: #418d42;
     position: relative;
 }
 
@@ -42,7 +42,7 @@
             right: 0;
             top: 0;
             height: 0%;
-            background-color: $hoverColor;
+            background-color: rgba(255, 255, 255, 0.1);
             transition: height 0.3s ease-in-out;
         }
 
@@ -53,7 +53,7 @@
             right: 0;
             bottom: 0;
             height: 0%;
-            background-color: $hoverColor;
+            background-color: rgba(255, 255, 255, 0.1);
             transition: height 0.3s ease-in-out;
         }
 
@@ -81,7 +81,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: $navColor;
+    background-color: #418d42;
     list-style: none;
     padding: 0;
     width: 150px;

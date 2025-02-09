@@ -1,3 +1,4 @@
+@use "/src/style/globalVariables.scss";
 
 .schedule {
     background: #fff;
@@ -15,4 +16,8 @@ h2 {
     align-items: center;
     gap: 10px;
     font-size: 1.2rem;
+}
+
+p {
+    color: #418d42;
 }

@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import { registerLocale } from "react-datepicker";
 import { ro } from "date-fns/locale/ro";
 import Modal from "react-modal";
-import emailjs from "@emailjs/browser"; 
+import emailjs from "@emailjs/browser";
 import "react-datepicker/dist/react-datepicker.css";
 import style from "./style.module.scss";
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from "../../cosntants/constants";
@@ -79,7 +79,9 @@ const Appointments = () => {
     return (
         <div className={style.appointments}>
             <h2>Faceți o programare</h2>
-
+            <p>
+                Pentru programări vă rugăm să completați formularul de mai jos. Veți fi contactați telefonic pentru confirmarea programării.
+            </p>
             <form onSubmit={handleSubmit}>
                 <label>Număr de telefon*</label>
                 <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required />
