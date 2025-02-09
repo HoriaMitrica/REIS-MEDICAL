@@ -9,12 +9,15 @@ const Contact = () => {
 
             <div className={style.contactInfo}>
                 <div className={style.contactDetails}>
-                    <p><strong>Telefon:</strong> 0371.086.321</p>
+                    <p><strong>Telefon:</strong> <a href="tel:0371086321">0371.086.321</a></p>
                     <p><strong>Fax:</strong> 031.815.32.28 / 031.817.44.34</p>
-                    <p><strong>Telefon fix:</strong> 021.345.51.55</p>
+                    <p><strong>Telefon fix:</strong> <a href="tel:0213455155">021.345.51.55</a></p>
                     <p><strong>Adresa:</strong> Str. Mizil Nr. 2C Bl SOCUM, Sect 3, București</p>
                     <p>În spatele Liceului de Chimie "Costin Nenițescu" de pe B-dul Theodor Pallady nr. 26</p>
-                    <p><strong>Email:</strong> <a href="mailto:contact@reismedical.ro">contact@reismedical.ro</a> / <a href="mailto:reismedical@yahoo.com">reismedical@yahoo.com</a></p>
+                    <p><strong>Email:</strong> 
+                        <a href="mailto:contact@reismedical.ro">contact@reismedical.ro</a> / 
+                        <a href="mailto:reismedical@yahoo.com">reismedical@yahoo.com</a>
+                    </p>
                 </div>
 
                 <div className={style.mapContainer}>

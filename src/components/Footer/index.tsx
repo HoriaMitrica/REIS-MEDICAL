@@ -17,7 +17,7 @@ const Footer = () => {
                 </div>
 
                 <div className={style.footerSection}>
-                    <h3>Programe Preventie</h3>
+                    <h3>Programe Prevenție</h3>
                     <ul>
                         <li><Link to="/programe-preventie/regimuri-alimentare" onClick={() => window.scrollTo(0, 0)}>Regimuri alimentare</Link></li>
                         <li><Link to="/programe-preventie/control-al-greutatii" onClick={() => window.scrollTo(0, 0)}>Control al greutății</Link></li>
@@ -32,9 +32,9 @@ const Footer = () => {
                     <ul>
                         <li>Reis Medical - Medicina Muncii</li>
                         <li>Str. Mizil Nr. 2C Bl SOCUM Sect 3 București</li>
-                        <li>Tel: 021.345.51.55 / 0371.086.321</li>
-                        <li>Fax: 0372.899.234</li>
-                        <li>Email: <a href="mailto:birou@reismedical.ro">birou@reismedical.ro</a></li>
+                        <li><strong>Tel:</strong> <a href="tel:0213455155">021.345.51.55</a> / <a href="tel:0371086321">0371.086.321</a></li>
+                        <li><strong>Fax:</strong> 0372.899.234</li>
+                        <li><strong>Email:</strong> <a href="mailto:birou@reismedical.ro">birou@reismedical.ro</a></li>
                     </ul>
                 </div>
             </div>

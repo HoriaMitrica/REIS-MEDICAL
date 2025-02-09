@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 import { FaFacebookF } from "react-icons/fa";
 
@@ -13,7 +13,7 @@ const Header = () => {
                 <div className={style.info}>
                     <div className={style.phone}>
                         <p>Pentru detalii și programări ne puteți contacta la:</p>
-                        <span className={style.phoneNumber}>021 345 51 55</span>
+                        <a href="tel:0213455155" className={style.phoneNumber}>021 345 51 55</a>
                     </div>
 
                     <div className={style.socialMedia}>
