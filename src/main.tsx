@@ -8,6 +8,7 @@ import RightSidePage from './components/RightSidePage/RightSide';
 import "./index.scss";
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
+import Promotions from './pages/Promotions';
 
 export default function Router() {
   return (
@@ -20,6 +21,7 @@ export default function Router() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/despre-noi" element={<AboutUs />} />
+            <Route path="/promotii" element={<Promotions />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
