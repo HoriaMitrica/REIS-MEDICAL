@@ -1,0 +1,111 @@
+@forward "/src/style/globalVariables.scss";
+
+.navbar {
+    width: 100%;
+    background-color: #418d42;
+    position: relative;
+}
+
+.navList {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 1200px;
+    margin-left: auto;
+}
+
+.navItem {
+    position: relative;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin:5px;
+    &:not(:last-child) {
+        border-right: 0.5px solid rgba(0, 0, 0, 1); // Light separator
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 15px 20px;
+        display: block;
+        position: relative;
+        transition: color 0.3s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 0%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: height 0.3s ease-in-out;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: height 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+            height: 100%;
+        }
+
+        &:hover::before {
+            height: 100%;
+        }
+
+        &:hover {
+            color: #f8f8f8;
+        }
+    }
+
+    &:hover .dropdown {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #418d42;
+    list-style: none;
+    padding: 0;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    visibility: hidden;
+
+    li {
+        padding: 10px;
+        transition: background-color 0.3s;
+
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
