@@ -42,7 +42,7 @@ export default function Router() {
 
             <Route path="/programe-preventie/regimuri-alimentare" element={<Diets />} />
             <Route path="/programe-preventie/control-al-greutatii" element={<WeightControl />} />
-            <Route path="/programe-preventie/cancer-san" element={<BreastCancer />} />
+            <Route path="/programe-preventie/preventie-cancer-san" element={<BreastCancer />} />
             <Route path="/programe-preventie/primul-ajutor" element={<FirstAid />} />
             <Route path="/programe-preventie/diabet-zaharat" element={<Diabetes />} />
 
