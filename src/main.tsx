@@ -9,6 +9,8 @@ import "./index.scss";
 import Contact from './pages/Contact';
 import AboutUs from './pages/AboutUs';
 import Promotions from './pages/Promotions';
+import MedicalServices from './pages/MedicalServices';
+import PreventionPrograms from './pages/PreventionPrograms';
 
 export default function Router() {
   return (
@@ -21,6 +23,8 @@ export default function Router() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/despre-noi" element={<AboutUs />} />
+            <Route path="/servicii-medicale" element={<MedicalServices />} />
+            <Route path="/programe-de-preventie" element={<PreventionPrograms />} />
             <Route path="/promotii" element={<Promotions />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
