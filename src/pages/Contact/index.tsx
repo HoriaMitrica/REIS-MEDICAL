@@ -2,7 +2,8 @@ import style from "./style.module.scss";
 
 const Contact = () => {
     return (
-        <div className={style.contactPage}>
+        <div className={`${style.contactPage} main-content`}>
+
             <h2>Contactați-ne</h2>
             <p>Pentru informații, vă rugăm să ne contactați telefonic sau pe email:</p>
 
@@ -19,9 +20,7 @@ const Contact = () => {
                 <div className={style.mapContainer}>
                     <iframe
                         title="Google Maps Location"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.3840855622637!2d26.17231987635493!3d44.42152640110838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1fea5e6e44d4f%3A0x6f4f5fd93e7fdd99!2sStrada%20Mizil%202C%2C%20Bucure%C8%99ti%2C%20Romania!5e0!3m2!1sen!2sro!4v1709825706311!5m2!1sen!2sro"
-                        width="100%"
-                        height="350"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219.7187111647445!2d26.176845725311757!3d44.40880385315072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1fc219b0d48af%3A0x9a89db724f46ad9d!2sReis%20Medical%20SRL!5e0!3m2!1sen!2sro!4v1739075742269!5m2!1sen!2sro"
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"

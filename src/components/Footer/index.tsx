@@ -5,25 +5,45 @@ const Footer = () => {
     return (
         <footer className={style.footer}>
             <div className={style.footerContent}>
-                <ul className={style.footerNav}>
-                    <li className={style.navItem}><Link to="/despre-noi">Despre noi</Link></li>
-                    <li><Link to="/servicii-medicale/medicina-muncii">Medicina Muncii</Link></li>
-                    <li><Link to="/servicii-medicale/medicina-generala">Medicina Generală</Link></li>
-                    <li><Link to="/servicii-medicale/medicina-alternativa">Medicina Alternativă</Link></li>
-                    <li><Link to="/servicii-medicale/analize-de-laborator">Analize de Laborator</Link></li>
-                </ul>
+                <div className={style.footerSection}>
+                    <h3>Servicii Medicale</h3>
+                    <ul>
+                        <li><Link to="/despre-noi" onClick={() => window.scrollTo(0, 0)}>Despre noi</Link></li>
+                        <li><Link to="/servicii-medicale/medicina-muncii" onClick={() => window.scrollTo(0, 0)}>Medicina Muncii</Link></li>
+                        <li><Link to="/servicii-medicale/medicina-generala" onClick={() => window.scrollTo(0, 0)}>Medicina Generală</Link></li>
+                        <li><Link to="/servicii-medicale/medicina-alternativa" onClick={() => window.scrollTo(0, 0)}>Medicina Alternativă</Link></li>
+                        <li><Link to="/servicii-medicale/analize-de-laborator" onClick={() => window.scrollTo(0, 0)}>Analize de Laborator</Link></li>
+                    </ul>
+                </div>
 
-                <ul className={style.footerContact}>
-                    <li>Reis Medical - Medicina Muncii</li>
-                    <li>Str. Mizil Nr. 2C Bl SOCUM Sect 3 Bucuresti</li>
-                    <li>Tel: 021.345.51.55 / 0371.086.321</li>
-                    <li>Fax: 0372.899.234</li>
-                    <li>Email: birou@reismedical.ro</li>
-                </ul>
+                <div className={style.footerSection}>
+                    <h3>Programe Preventie</h3>
+                    <ul>
+                        <li><Link to="/programe-preventie/regimuri-alimentare" onClick={() => window.scrollTo(0, 0)}>Regimuri alimentare</Link></li>
+                        <li><Link to="/programe-preventie/control-al-greutatii" onClick={() => window.scrollTo(0, 0)}>Control al greutății</Link></li>
+                        <li><Link to="/programe-preventie/preventie-cancer-san" onClick={() => window.scrollTo(0, 0)}>Prevenția cancerului de sân</Link></li>
+                        <li><Link to="/programe-preventie/primul-ajutor" onClick={() => window.scrollTo(0, 0)}>Primul Ajutor</Link></li>
+                        <li><Link to="/programe-preventie/diabet-zaharat" onClick={() => window.scrollTo(0, 0)}>Diabet zaharat</Link></li>
+                    </ul>
+                </div>
+
+                <div className={style.footerSection}>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Reis Medical - Medicina Muncii</li>
+                        <li>Str. Mizil Nr. 2C Bl SOCUM Sect 3 București</li>
+                        <li>Tel: 021.345.51.55 / 0371.086.321</li>
+                        <li>Fax: 0372.899.234</li>
+                        <li>Email: <a href="mailto:birou@reismedical.ro">birou@reismedical.ro</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div className={style.copyright}>
-                &copy; {new Date().getFullYear()} Reis Medical. All rights reserved by <a target="_blank" href="https://cleancode.ro">Clean Code Solutions</a>.
+            <div className={style.footerBottom}>
+                <p>
+                    &copy; {new Date().getFullYear()} Reis Medical. All rights reserved by 
+                    <a target="_blank" rel="noopener noreferrer" href="https://cleancode.ro"> Clean Code Solutions</a>.
+                </p>
             </div>
         </footer>
     );

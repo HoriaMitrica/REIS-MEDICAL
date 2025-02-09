@@ -1,0 +1,16 @@
+.preventionPrograms {
+
+    .description {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+
+    .cardContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px 20px;
+        justify-content: center;
+        padding: 20px;
+    }
+}

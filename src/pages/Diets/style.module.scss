@@ -1,0 +1,28 @@
+.diets {
+
+    .image {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    h3,
+    h4 {
+        color: #418d42;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    li {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 5px;
+    }
+}

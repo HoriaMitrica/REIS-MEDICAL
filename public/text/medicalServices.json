@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Medicina Muncii",
+        "description": "Activitatea cu cea mai mare pondere în firma noastră - Medicină muncii - reprezintă în același timp și cea mai mare responsabilitate pe care o avem atât față de angajați, pentru a-și putea desfășura activitatea în cele mai bune condiții de sănătate cât și față de angajator pentru care lipsa de incidente medicale...",
+        "image": "/photos/medicina_muncii.jpg",
+        "to": "/servicii-medicale/medicina-muncii"
+    },
+    {
+        "title": "Medicina Generală",
+        "description": "Medicina generală este specialitatea care se ocupă cu diagnosticarea și tratamentul afecțiunilor acute sau cronice și furnizarea de îngrijiri preventive. Consultația de medicină generală include: anamneză și alcătuirea dosarului medical al pacientului; examen clinic general; măsurarea tensiunii arteriale...",
+        "image": "/photos/medicina_generala.jpg",
+        "to": "/servicii-medicale/medicina-generala"
+    },
+    {
+        "title": "Medicina Alternativă",
+        "description": "Medicina altenativă cuprinde o serie de tratamente și terapii neconvenționale; unele sunt mai cunoscute, altele mai puțin cunoscute, dar toate au același scop: o stare de sănătate cât mai bună. Medicina alternativă nu se substituie medicinei alopate, care tratează în principal efectele bolii...",
+        "image": "/photos/medicina_alternativa.png",
+        "to": "/servicii-medicale/medicina-alternativa"
+    },
+    {
+        "title": "Analize de Laborator",
+        "description": "Nu poți avea grijă de oameni dacă nu poți afla cu ce probleme se confruntă de aceea cu ajutorul aparaturii din dotare și a colaboratorilor noștri încercăm să determinăm cu exactitate ce suferințe au pacienți noștrii, astfel încât în cel mai scurt timp cu putință să le redăm starea de sănătate normală...",
+        "image": "/photos/analize_de_laborator.jpg",
+        "to": "/servicii-medicale/analize-de-laborator"
+    }
+]

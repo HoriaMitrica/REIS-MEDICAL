@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Regimuri alimentare recomandate în diferite afecțiuni",
+        "description": "În funcție de afecțiunile prezentate de pacient, putem crea o recomandare personalizată, constând în regim alimentar, suplimente nutritive adecvate și activitate fizică...",
+        "image": "/photos/regimuri_alimentare.jpg",
+        "to": "/programe-preventie/regimuri-alimentare"
+    },
+    {
+        "title": "Program de control al greutății",
+        "description": "Setarea unor principii de viata sanatoase, care au ca rezultat atingerea si mentinerea greutatii ideale...",
+        "image": "/photos/control_al_greutatii.jpg",
+        "to": "/programe-preventie/control-al-greutatii"
+    },
+    {
+        "title": "Prevenția cancerului de sân",
+        "description": "1 din 8 femei risca să dezvolte cancer la sân. Cunoașterea propriului corp și a modificărilor fiziologice este foarte importantă...",
+        "image": "/photos/cancer_san.jpg",
+        "to": "/programe-preventie/preventie-cancer-san"
+    },
+    {
+        "title": "Primul Ajutor",
+        "description": "Primul ajutor este reprezentat de totalitatea acțiunilor efectuate de către persoane fără pregătire medicală și fără echipamente specifice...",
+        "image": "/photos/primul_ajutor.jpg",
+        "to": "/programe-preventie/primul-ajutor"
+    },
+    {
+        "title": "Consiliere regim de viață in diabetul zaharat",
+        "description": "Diabetul zaharat este o afecțiune cronică care poate să apară la vârste înaintate, dar care își face loc tot mai devreme la adultul tânăr...",
+        "image": "/photos/consiliere_diabet.jpg",
+        "to": "/programe-preventie/diabet-zaharat"
+    }
+]

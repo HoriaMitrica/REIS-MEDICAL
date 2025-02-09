@@ -1,0 +1,21 @@
+.alternativeMedicine {
+
+    h3 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        color: #357a35;
+    }
+
+    .servicesList {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            background: #f5f5f5;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    }
+}
