@@ -11,12 +11,11 @@
         "image": "/photos/control_al_greutatii.jpg",
         "to": "/programe-preventie/control-al-greutatii"
     },
-
     {
         "title": "Prevenția cancerului de sân",
         "description": "1 din 8 femei risca să dezvolte cancer la sân. Cunoașterea propriului corp și a modificărilor fiziologice este foarte importantă...",
         "image": "/photos/cancer_san.jpg",
-        "to": "/programe-preventie/cancer-san"
+        "to": "/programe-preventie/preventie-cancer-san"
     },
     {
         "title": "Primul Ajutor",
