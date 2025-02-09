@@ -1,0 +1,306 @@
+[
+    {
+        "title": "Biochimie",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile",
+        "tests": [
+            "Acid uric (ser, urina, alte lichide)",
+            "Albumina (ser, alte lichide)",
+            "Alfa 1 antitripsina",
+            "Alfa 2 macroglobulina",
+            "ALT/TGP",
+            "Amilaza totala (ser, urina, alte lichide)",
+            "AST/TGO",
+            "Bilirubina directa (conjugata)",
+            "Bilirubina indirecta (neconjugata)",
+            "Bilirubina totala",
+            "Calciu ionic",
+            "Calciu seric total, in urina",
+            "Capacitate totala de legare a fierului",
+            "CK-MB",
+            "Clearance creatinina",
+            "Clor (ser)",
+            "Coeficient de saturatie al transferinei",
+            "Colesterol total",
+            "Colesterol-HDL",
+            "Colesterol-LDL",
+            "Colesterol-VLDL",
+            "Creatinina (ser, in urina, alte lichide)",
+            "Creatinkinaza (CK)",
+            "Electroforeza hemoglobinei",
+            "Electroforeza proteinelor serice",
+            "Feritina",
+            "Folat",
+            "Fosfataza acida prostatica",
+            "Fosfataza acida totala",
+            "Fosfataza alcalina",
+            "Fosfor (ser, urina)",
+            "Gama glutamil transferaza (GGT)",
+            "Glucoza (ser, urina, LCR, alte lichide)",
+            "Hemoglobina glicozilata (HbA1c)",
+            "Lactatdehidrogenaza (LDH) (ser, alte lichide)",
+            "Lipaza",
+            "Lipide totale",
+            "Litiu",
+            "Magneziu (ser, in urina)",
+            "Potasiu (ser, in urina, lichide)",
+            "Procalcitonina",
+            "Proteine totale (ser, in urina, LCR, alte lichide)",
+            "Raport A/G",
+            "Sideremie",
+            "Sodiu (ser, in urina, lichide)",
+            "Sumar urina - biochimie",
+            "Test ADDIS Hamburger",
+            "Transferina",
+            "Trigliceride",
+            "Uree (ser, in urina)",
+            "Urina - sediment calitativ",
+            "Urina - sediment cantitativ (metoda Stansfeld-Webb)"
+        ]
+    },
+    {
+        "title": "Coagulare",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile, pana la 5 saptamani",
+        "tests": [
+            "Anticoagulant lupic",
+            "Anticorpi anti-trombocitari liberi (allo si autoanticorpi), screening",
+            "Antigen Factor Von Willebrand",
+            "Antitrombina III",
+            "D.Dimer Cantitativ",
+            "Factor IX",
+            "Factor V Leiden (APCR V)",
+            "Factor VIII",
+            "Fibrinogen",
+            "Homocisteina",
+            "Proteina C",
+            "Proteina S libera",
+            "Timp de protrombina QUICK",
+            "Timp de sangerare",
+            "Timp partial activat de tromboplastina (APTT)",
+            "Von Willebrand Factor Activity",
+            "Von Willebrand Factor Antigen"
+        ]
+    },
+    {
+        "title": "Droguri in urina",
+        "details": "Timp de eliberare rezultate: intre 3 si 7 zile",
+        "tests": [
+            "Amfetamina (AMP)",
+            "Barbiturice",
+            "Benzodiazepine (BZO)",
+            "Cocaina (COC)",
+            "Ecstasy (MOMA)",
+            "Marijuana (THC)",
+            "Morfina",
+            "Opiacee (OPI)",
+            "Phenciclidina"
+        ]
+    },
+    {
+        "title": "Hematologie",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile",
+        "tests": [
+            "Celule lupice",
+            "Concentrat leucocitar",
+            "Electroforeza hemoglobinei",
+            "Examen citologic al frotiului sanguin",
+            "Examinare morfologica - Frotiu sange capilar",
+            "Hemoleucograma completa (cu formula leucocitara)",
+            "Numaratoare de reticulocite",
+            "Porfirine Urinare",
+            "VSH"
+        ]
+    },
+    {
+        "title": "Imunohematologie",
+        "details": "Timp de eliberare rezultate: intre 3 si 7 zile",
+        "tests": [
+            "Anticorpi specifici anti-Rh(D) - depistare",
+            "Anticorpi specifici anti-Rh(D) - titrare",
+            "Factor Rh",
+            "Grup sanguin - sistem A,B,O",
+            "TEST COOMBS DIRECT"
+        ]
+    },
+    {
+        "title": "Imunologie si serologie",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile (in mod normal) si pana la 6 saptamani",
+        "tests": [
+            "Ac Anti Brucella screening",
+            "Ac Anti Salmonella",
+            "Ac Anti Yersinia",
+            "Adenovirus serologie",
+            "Anti-tiroglobulina (AT)",
+            "Anti-TPO (anti-tiroidperoxidaza)",
+            "Antic Anti DNA ssDNA",
+            "Anticorpi anti ADN dublu catenar (nativ)",
+            "Anticorpi Anti Endomysium Ig A",
+            "Anticorpi anti Jo-1",
+            "Anticorpi Anti receptor TSH (TRAb)",
+            "Anticorpi anti Scl-70",
+            "Anticorpi anti U1-RNP",
+            "Anticorpi anti- CCP IgG (cyclic citrullinated peptide)",
+            "Anticorpi anti-La (SS-B)",
+            "Anticorpi anti-membrana bazala glomerulara",
+            "Anticorpi anti-mitocondrial (AMA)"
+        ]
+    },
+    {
+        "title": "Markeri cardiaci",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile",
+        "tests": [
+            "TROPONINA"
+        ]
+    },
+    {
+        "title": "Markeri endocrini",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile",
+        "tests": [
+            "17-cetosteroizi urina/24 ore",
+            "17-OH progesteron",
+            "25-Hidroxi Vitamina D",
+            "Acid vanilmandelic in urina",
+            "ACTH",
+            "Aldosteron",
+            "Beta Crosslaps (osteoporoza)"
+        ]
+    },
+    {
+        "title": "Markeri tumorali",
+        "details": "Timp de eliberare rezultate: intre 3 si 15 zile",
+        "tests": [
+            "Acid vanilmandelic",
+            "AFP (ficat, testicol)",
+            "CA 125 (ovarian)",
+            "CA 15.3 (san)",
+            "CA 19.9 (ficat si cai biliare, pancreas)",
+            "CA 72-4 (stomac, rar ovarian)",
+            "CALCITONINA (cancer glanda tiroida)"
+        ]
+    },
+    {
+        "title": "Markeri virali",
+        "details": "Timp de eliberare rezultate: intre 3 zile si 2 saptamani",
+        "tests": [
+            "Anticorpi HAV",
+            "Anticorpi HAV IgM",
+            "Anticorpi HBc",
+            "Anticorpi HBc IgM",
+            "Anticorpi HBe",
+            "Anticorpi HBs - cantitativ",
+            "Anticorpi HCV",
+            "Anticorpi HDV",
+            "Anticorpi HDV IgM",
+            "Anticorpi HIV 1+2",
+            "Antigen HBe",
+            "Antigen HBs",
+            "Antigen HDV",
+            "Citomegalovirus - Anticorpi IgG",
+            "Citomegalovirus - Anticorpi IgM",
+            "Rubeola - Anticorpi IgG",
+            "Rubeola - Anticorpi IgM",
+            "Virus Epstein Barr - Anticorpi IgG",
+            "Virus Epstein Barr - Anticorpi IgM",
+            "Virus Herpetic 1 - Anticorpi IgG",
+            "Virus Herpetic 1/2 - Anticorpi IgM",
+            "Virus Herpetic 2 - Anticorpi IgG"
+        ]
+    },
+    {
+        "title": "Microbiologie",
+        "details": "Timp de eliberare rezultate: intre 3 zile si 2 saptamani",
+        "tests": [
+            "Examen bacteriologic / micologic din secretii uretrale, otice, conjunctivale, bronsica, sperma, puroi si alte tipuri de secretii",
+            "Antigen Chlamydia - secretie uretrala, secretie conjunctivala",
+            "Examen bacteriologic (cultura ± antibiograma)",
+            "Examen micologic (cultura ± fungigrama)",
+            "Examen microscopic pe frotiu",
+            "Micoplasme (identificare ± antibiograma) - secretie uretrala",
+            "Spermograma (doar cu programare in laboratorul dotat tehnico-material)"
+        ]
+    },
+    {
+        "title": "Examen materii fecale",
+        "details": "Timp de eliberare rezultate: intre 3 si 7 zile",
+        "tests": [
+            "Antigen Giardia",
+            "Antigen Helicobacter pylori",
+            "Antigen Rotavirus",
+            "Coprocitograma",
+            "Coprocultura (cultura ± antibiograma)",
+            "Examen coproparazitologic",
+            "Hemoragii oculte in fecale"
+        ]
+    },
+    {
+        "title": "Exsudat lingual",
+        "details": "Timp de eliberare rezultate: in 7 zile",
+        "tests": [
+            "Examen micologic (cultura+fungigrama)"
+        ]
+    },
+    {
+        "title": "Exsudat nazal",
+        "details": "Timp de eliberare rezultate: in 7 zile",
+        "tests": [
+            "Examen bacteriologic (cultura ± antibiograma)"
+        ]
+    },
+    {
+        "title": "Exudat faringian",
+        "details": "Timp de eliberare rezultate: in 7 zile",
+        "tests": [
+            "Examen bacteriologic (cultura ± antibiograma)",
+            "Examen micologic (cultura+fungigrama)",
+            "Examen microscopic pe frotiu"
+        ]
+    },
+    {
+        "title": "Urina",
+        "details": "Timp de eliberare rezultate: in 7 zile",
+        "tests": [
+            "Urocultura + Antibiograma"
+        ]
+    },
+    {
+        "title": "Toxicologie",
+        "details": "Timp de eliberare rezultate: intre 7 si 14 zile",
+        "tests": [
+            "Acetona (in urina)",
+            "Acid delta-aminolevulinic (in urina)",
+            "Acid hipuric (in urina)",
+            "Acid mandelic (in urina)",
+            "Acid metil hipuric (in urina)",
+            "Acid oxalic (in urina)",
+            "Acid tricloracetic (in urina)",
+            "Alcool (Alcoolemia)",
+            "Alcool metilic (in urina)",
+            "Cadmiu sange",
+            "Cadmiu urina",
+            "Carboxihemoglobina (in sange)",
+            "Coproporfirine (in urina)",
+            "Crom (in urina)",
+            "Cupru in urina",
+            "Cupru ser",
+            "Fenoli liberi si conjugati (in urina)",
+            "Fluor (in urina)",
+            "Hidrazina (in urina)",
+            "Mangan (in urina)",
+            "Mercur sange",
+            "Mercur urina",
+            "Methemoglobina (in sange)",
+            "Metiletilacetona (in urina)",
+            "Ortocrezol (in urina)",
+            "Plumb sange",
+            "Plumb urina",
+            "Porfobilinogen (in urina)",
+            "Reactia Fujivara (in urina)",
+            "Sulfat index (in urina)",
+            "Tiocianati (in urina)",
+            "Tioeteri (in urina)",
+            "Tricloretanol (in urina)",
+            "Uroporfirine (in urina)",
+            "Zinc in ser",
+            "Zinc in urina"
+        ]
+    }
+]

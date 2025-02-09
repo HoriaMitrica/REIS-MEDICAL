@@ -11,12 +11,7 @@
         "image": "/photos/control_al_greutatii.jpg",
         "to": "/programe-preventie/control-greutate"
     },
-    {
-        "title": "Consiliere regim de viață in diabetul zaharat",
-        "description": "Diabetul zaharat este o afecțiune cronică care poate să apară la vârste înaintate, dar care își face loc tot mai devreme la adultul tânăr...",
-        "image": "/photos/consiliere_diabet.jpg",
-        "to": "/programe-preventie/diabet"
-    },
+
     {
         "title": "Prevenția cancerului de sân",
         "description": "1 din 8 femei risca să dezvolte cancer la sân. Cunoașterea propriului corp și a modificărilor fiziologice este foarte importantă...",
@@ -28,5 +23,11 @@
         "description": "Primul ajutor este reprezentat de totalitatea acțiunilor efectuate de către persoane fără pregătire medicală și fără echipamente specifice...",
         "image": "/photos/primul_ajutor.jpg",
         "to": "/programe-preventie/primul-ajutor"
+    },
+    {
+        "title": "Consiliere regim de viață in diabetul zaharat",
+        "description": "Diabetul zaharat este o afecțiune cronică care poate să apară la vârste înaintate, dar care își face loc tot mai devreme la adultul tânăr...",
+        "image": "/photos/consiliere_diabet.jpg",
+        "to": "/programe-preventie/diabet"
     }
 ]
