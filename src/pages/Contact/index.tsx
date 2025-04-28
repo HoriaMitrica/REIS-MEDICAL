@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./style.module.scss";
 
 const Contact = () => {
@@ -14,10 +15,14 @@ const Contact = () => {
                     <p><strong>Telefon fix:</strong> <a href="tel:0213455155">021.345.51.55</a></p>
                     <p><strong>Adresa:</strong> Str. Mizil Nr. 2C Bl SOCUM, Sect 3, București</p>
                     <p>În spatele Liceului de Chimie "Costin Nenițescu" de pe B-dul Theodor Pallady nr. 26</p>
-                    <p><strong>Email:</strong> 
-                        <a href="mailto:contact@reismedical.ro">contact@reismedical.ro</a> / 
+                    <p><strong>Email:</strong>
+                        <a href="mailto:contact@reismedical.ro">contact@reismedical.ro</a> /
                         <a href="mailto:reismedical@yahoo.com">reismedical@yahoo.com</a>
                     </p>
+                    <div className={style.loginLink}>
+                        <p>Ai cont de client?</p>
+                        <Link to="/login">Accesează dashboard-ul</Link>
+                    </div>
                 </div>
 
                 <div className={style.mapContainer}>

@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import dayjs from 'dayjs';
 import { jwtDecode } from 'jwt-decode';
-import { LoginResponseDto } from '../../shared/generated-sources';
-import { RootState } from '../../store/store';
+import { LoginResponseDto } from '../shared/generated-sources/index';
+import { RootState } from '../store/store';
 import { AuthenticationStateInterface } from './IAuthenticationState';
 
 const decodeJwtToken = (token?: string) => {
@@ -57,13 +57,12 @@ export const authSlice = createSlice({
 });
 
 export function isAuthenticationValid(expirationDate: Date | string | null): Boolean {
-    return dayjs(expirationDate)
-        .isValid() &&
-        dayjs()
-            .isBefore(expirationDate);
+    if (!expirationDate) return false;
+    return dayjs(expirationDate).isValid() && dayjs().isBefore(expirationDate);
 }
 
-export const isAuthenticated = (state: RootState) => isAuthenticationValid(state.authentication.expirationDate);
+export const isAuthenticated = (state: RootState) => isAuthenticationValid(state.auth.expirationDate);
 
 export const { userLoggedIn, logout } = authSlice.actions;
 
+export default authSlice.reducer;
