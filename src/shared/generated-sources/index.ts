@@ -4,6 +4,7 @@
 /* eslint-disable */
 
 export { CreateUserDto } from './models/CreateUserDto';
+export type { CreateWorkContractDto } from './models/CreateWorkContractDto';
 export type { LoginResponseDto } from './models/LoginResponseDto';
 export type { LoginUserDto } from './models/LoginUserDto';
 export type { RequestResetPasswordDto } from './models/RequestResetPasswordDto';

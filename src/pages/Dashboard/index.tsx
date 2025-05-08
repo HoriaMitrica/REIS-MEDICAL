@@ -1,37 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector } from '../../store/hooks';
 import { getCurrentUserRole } from '../../store/store';
 import { useSearchContractsQuery } from '../../services/contractApi';
 import styles from './style.module.scss';
+import { WorkContract, WorkContractWithDriveInfoDto } from '../../shared/generated-sources';
+import UploadContractModal from './UploadContractModal';
 
 const Dashboard = () => {
     const navigate = useNavigate();
     const userRole = useAppSelector(getCurrentUserRole);
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchParams, setSearchParams] = useState({
-        cnp: '',
-        page: 0,
-        size: 10,
-    });
+    const [searchParams, setSearchParams] = useState<{ cnp: string }>({ cnp: '' });
+    const [contracts, setContracts] = useState<WorkContractWithDriveInfoDto[]>([]);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // TODO: Implement actual search when backend is ready
-    const { data: contracts, isLoading, error } = useSearchContractsQuery(
-        searchParams,
-        { skip: !searchParams.cnp }
+    const { data, isLoading, error } = useSearchContractsQuery(
+        { cnp: searchParams.cnp },
+        { skip: !searchParams.cnp } // Skip the request if no CNP is entered
     );
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
-        setSearchParams(prev => ({
-            ...prev,
-            cnp: searchTerm,
-            page: 0
-        }));
+        setSearchParams({ cnp: searchTerm }); // Set the search params to the entered CNP
     };
 
-    const isUploadAllowed = userRole === 'ADMIN' || userRole === 'ACCOUNTANT';
+    useEffect(() => {
+        if (data) {
+            setContracts(data);
+        }
+    }
+        , [data]);
+    console.log(contracts);
 
+    const isUploadAllowed = userRole[0] === 'ADMIN' || userRole[0] === 'ACCOUNTANT';
+    console.log(userRole[0]);
     return (
         <div className={styles.dashboard}>
             <div className={styles.header}>
@@ -39,7 +42,7 @@ const Dashboard = () => {
                 {isUploadAllowed && (
                     <button
                         className={styles.uploadButton}
-                        onClick={() => navigate('/dashboard/upload')}
+                        onClick={() => setIsModalOpen(true)}
                     >
                         Upload Contract
                     </button>
@@ -66,14 +69,22 @@ const Dashboard = () => {
                 <div className={styles.results}>
                     {isLoading && <p>Searching contracts...</p>}
                     {error && <p className={styles.error}>Error searching contracts. Please try again.</p>}
-                    {contracts?.content && contracts.content.length > 0 ? (
+                    { contracts.length > 0 ? (
                         <div className={styles.contractsList}>
-                            {contracts.content.map((contract) => (
-                                <div key={contract.id} className={styles.contractCard}>
-                                    <h3>Contract {contract.id}</h3>
-                                    <p>CNP: {contract.cnp}</p>
-                                    <p>Status: {contract.status}</p>
-                                    <p>Expiration: {new Date(contract.expirationDate).toLocaleDateString()}</p>
+                            {contracts.map((contractWithLink:WorkContractWithDriveInfoDto) => (
+                                <div key={contractWithLink.contract?.id} className={styles.contractCard}>
+                                    <h3>Contract {contractWithLink.contract?.id}</h3>
+                                    <p>Original File Name: {contractWithLink.contract?.originalFileName}</p>
+                                    <p>Expiration Date: {contractWithLink.contract?.expirationDate!}</p>
+
+                                    {/* Download button with file download functionality */}
+                                    <a
+                                        href={contractWithLink.driveFileViewLink}
+                                        download={contractWithLink.contract?.originalFileName} // This ensures the file is downloaded
+                                        className={styles.downloadLink}
+                                    >
+                                        <button className={styles.downloadButton}>Download File</button>
+                                    </a>
                                 </div>
                             ))}
                         </div>
@@ -82,7 +93,10 @@ const Dashboard = () => {
                     ) : null}
                 </div>
             </div>
+
+            {isModalOpen && <UploadContractModal onClose={() => setIsModalOpen(false)} />}
         </div>
     );
-}; 
+};
+
 export default Dashboard;

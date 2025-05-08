@@ -1,48 +1,35 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import {
+    CreateWorkContractDto,
     WorkContract,
+    WorkContractWithDriveInfoDto,
 } from '../shared/generated-sources/index';
 import httpRequestHandler from '../shared/baseQueryHandler.function';
-
-// TODO: Define proper DTOs when available
-interface ContractSearchParams {
-    cnp?: string;
-    status?: 'ACTIVE' | 'EXPIRED' | 'PENDING';
-    page?: number;
-    size?: number;
-    sort?: string;
-}
-
-interface ContractSearchResponse {
-    content: WorkContract[];
-    totalElements: number;
-    totalPages: number;
-    size: number;
-    number: number;
-}
 
 export const contractApi = createApi({
     reducerPath: 'contractApi',
     baseQuery: httpRequestHandler,
     tagTypes: ['Contract'],
     endpoints: (builder) => ({
-        // TODO: Implement search functionality
-        searchContracts: builder.query<ContractSearchResponse, ContractSearchParams >({
-            query: (params: ContractSearchParams) => ({
-                url: '/contracts/search',
+        searchContracts: builder.query<WorkContractWithDriveInfoDto[], {cnp:string}>({
+            query: (params: {cnp:string}) => ({
+                url: `/api/contracts/by-cnp/${params.cnp}`,
                 method: 'GET',
-                params,
             }),
             providesTags: ['Contract'],
         }),
-        getContract: builder.query<WorkContract, string>({
-            query: (id: string) => `/contracts/${id}`,
-            providesTags: ['Contract'],
+        addContract: builder.mutation<WorkContract, CreateWorkContractDto>({
+            query: (contractToAdd) => ({
+                url: '/contracts/upload',
+                method: 'POST',
+                body: contractToAdd,
+            }),
+            invalidatesTags: ['Contract'],
         }),
     }),
 });
 
 export const {
     useSearchContractsQuery,
-    useGetContractQuery,
+    useAddContractMutation,
 } = contractApi; 
