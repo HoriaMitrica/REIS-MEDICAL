@@ -1,18 +1,18 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../store/hooks';
-import { getCurrentUserEmail } from '../../store/store';
+import { isAuthenticated } from '../../auth/AuthSlice';
 import style from './style.module.scss';
 
 export function AuthorizedLayout() {
     const navigate = useNavigate();
-    const userEmail = useAppSelector(getCurrentUserEmail);
+    const isUserAuthenticated = useAppSelector(isAuthenticated);
 
     useEffect(() => {
-        if (!userEmail) {
+        if (!isUserAuthenticated) {
             navigate('/login');
         }
-    }, [userEmail, navigate]);
+    }, [isUserAuthenticated, navigate]);
 
     return (
         <div className={style.authorizedLayout}>

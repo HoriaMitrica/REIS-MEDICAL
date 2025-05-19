@@ -39,7 +39,7 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        userLoggedIn: (state, action: PayloadAction<LoginResponseDto>) => {
+         userLoggedIn: (state, action: PayloadAction<LoginResponseDto>) => {
             if (action.payload.token) {
                 const tokenData = decodeJwtToken(action.payload.token);
                 state.token = tokenData.token!;

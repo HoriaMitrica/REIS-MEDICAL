@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLoginUserMutation } from '../../auth/api/AuthApi';
 import { LoginUserDto } from '../../shared/generated-sources';
+import { useDispatch } from 'react-redux';
+import { userLoggedIn } from '../../auth/AuthSlice';
 import styles from './style.module.scss';
 
- const Login = () => {
+const Login = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [loginUser, { isLoading }] = useLoginUserMutation();
     const [formData, setFormData] = useState<LoginUserDto>({
         email: '',
@@ -26,6 +29,7 @@ import styles from './style.module.scss';
         try {
             const result = await loginUser(formData).unwrap();
             if (result) {
+                dispatch(userLoggedIn(result)); // Update Redux state
                 navigate('/dashboard');
             }
         } catch (error) {
