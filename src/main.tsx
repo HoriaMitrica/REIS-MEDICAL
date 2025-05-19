@@ -20,10 +20,12 @@ import FirstAid from './pages/FirstAid';
 import Diabetes from './pages/Diabetes';
 import Promotions from './pages/Promotions';
 import Contact from './pages/Contact';
-import  Login  from './pages/Login';
+import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import  Upload  from './pages/Upload';
+import Upload from './pages/Upload';
+import ResetPassword from './pages/ResetPassword';
 import "./index.scss";
+import PasswordResetRequest from './pages/PasswordResetRequest';
 
 function App() {
     return (
@@ -46,6 +48,8 @@ function App() {
                     <Route path="/promotii" element={<Promotions />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="/reset-password" element={<ResetPassword />} />
+                    <Route path="/request-reset-password" element={<PasswordResetRequest />} />
                 </Route>
 
                 <Route path="/dashboard" element={<AuthorizedLayout />}>

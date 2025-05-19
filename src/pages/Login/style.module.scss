@@ -12,7 +12,7 @@
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     width: 100%;
     max-width: 400px;
 
@@ -33,11 +33,11 @@
     }
 
     input {
-        width: 100%;
-        padding: 0.75rem;
+        width: 90%; /* Reduced width to prevent overflow */
+        padding: 0.5rem; /* Adjusted padding for smaller size */
         border: 1px solid black;
         border-radius: 4px;
-        font-size: 1rem;
+        font-size: 0.9rem; /* Reduced font size */
 
         &:focus {
             outline: none;
@@ -71,4 +71,18 @@
         background-color: $disabled-color;
         cursor: not-allowed;
     }
-} 
+}
+
+.forgotPasswordButton {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    background: none;
+    border: none;
+    color: $primary-color;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+        color: white;
+    }
+}

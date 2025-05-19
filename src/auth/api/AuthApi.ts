@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { handleQueryStartedFunction } from '../../shared/functions/handleQueryStarted.function';
 import { LoginResponseDto, LoginUserDto, RequestResetPasswordDto, ResetPasswordDto, SuccessDto } from '../../shared/generated-sources';
-import { userLoggedIn } from '../AuthSlice';
 
 const baseUrl = `${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_VERSION}`;
 export const authApi = createApi({
@@ -13,11 +11,6 @@ export const authApi = createApi({
                 url: `/auth/login`,
                 method: 'POST',
                 body: data
-            }),
-            onQueryStarted: (arg, api) => handleQueryStartedFunction<LoginResponseDto>({
-                dispatch: api.dispatch,
-                successActions: [userLoggedIn],
-                queryFulfilled: api.queryFulfilled
             }),
         }),
         passwordResetRequest: builder.mutation<SuccessDto, RequestResetPasswordDto>({
@@ -41,4 +34,4 @@ export const {
     useLoginUserMutation, 
     usePasswordResetRequestMutation, 
     usePasswordResetMutation 
-} = authApi; 
+} = authApi;

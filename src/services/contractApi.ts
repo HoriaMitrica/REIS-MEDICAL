@@ -13,7 +13,7 @@ export const contractApi = createApi({
     endpoints: (builder) => ({
         searchContracts: builder.query<WorkContractWithDriveInfoDto[], {cnp:string}>({
             query: (params: {cnp:string}) => ({
-                url: `/api/contracts/by-cnp/${params.cnp}`,
+                url: `/contracts/by-cnp/${params.cnp}`,
                 method: 'GET',
             }),
             providesTags: ['Contract'],

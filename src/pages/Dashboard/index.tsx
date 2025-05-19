@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAppSelector } from '../../store/hooks';
-import { getCurrentUserRole } from '../../store/store';
+import { getCurrentUserRole, getCurrentUserEmail } from '../../store/store';
 import { useSearchContractsQuery } from '../../services/contractApi';
 import styles from './style.module.scss';
-import { WorkContract, WorkContractWithDriveInfoDto } from '../../shared/generated-sources';
+import { WorkContractWithDriveInfoDto } from '../../shared/generated-sources';
 import UploadContractModal from './UploadContractModal';
 
 const Dashboard = () => {
     const navigate = useNavigate();
     const userRole = useAppSelector(getCurrentUserRole);
+    const userEmail = useAppSelector(getCurrentUserEmail);
     const [searchTerm, setSearchTerm] = useState('');
     const [searchParams, setSearchParams] = useState<{ cnp: string }>({ cnp: '' });
     const [contracts, setContracts] = useState<WorkContractWithDriveInfoDto[]>([]);
@@ -38,63 +39,78 @@ const Dashboard = () => {
     return (
         <div className={styles.dashboard}>
             <div className={styles.header}>
-                <h1>Contract Management</h1>
+                <h1>Gestionare Fișiere</h1>
+                </div>
                 {isUploadAllowed && (
                     <button
                         className={styles.uploadButton}
                         onClick={() => setIsModalOpen(true)}
                     >
-                        Upload Contract
+                        Încarcă Fișier
                     </button>
                 )}
-            </div>
+                <div className={styles.userWidget}>
+                    <p>Utilizator conectat: {userEmail}</p>
+                    <button
+                        className={styles.logoutButton}
+                        onClick={() => {
+                            localStorage.clear();
+                            navigate('/login');
+                        }}
+                    >
+                        Deconectare
+                    </button>
+                    <Link to="/request-reset-password">
+                        <button className={styles.resetPasswordButton}>Resetare parolă</button>
+                    </Link>
+                </div>
 
             <div className={styles.searchSection}>
-                <h2>Search Contracts</h2>
+                <h2>Căutare Fișiere</h2>
                 <form onSubmit={handleSearch}>
                     <div className={styles.searchBar}>
                         <input
                             type="text"
-                            placeholder="Enter CNP to search..."
+                            placeholder="Introduceți CNP pentru căutare..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className={styles.searchInput}
                         />
                         <button type="submit" className={styles.searchButton}>
-                            Search
+                            Caută
                         </button>
                     </div>
                 </form>
 
                 <div className={styles.results}>
-                    {isLoading && <p>Searching contracts...</p>}
-                    {error && <p className={styles.error}>Error searching contracts. Please try again.</p>}
+                    {isLoading && <p>Se caută fișiere...</p>}
+                    {error && <p className={styles.error}>Eroare la căutarea fișierelor. Vă rugăm să încercați din nou.</p>}
                     { contracts.length > 0 ? (
                         <div className={styles.contractsList}>
                             {contracts.map((contractWithLink:WorkContractWithDriveInfoDto) => (
                                 <div key={contractWithLink.contract?.id} className={styles.contractCard}>
-                                    <h3>Contract {contractWithLink.contract?.id}</h3>
-                                    <p>Original File Name: {contractWithLink.contract?.originalFileName}</p>
-                                    <p>Expiration Date: {contractWithLink.contract?.expirationDate!}</p>
+                                    <h3>Fișier {contractWithLink.contract?.id}</h3>
+                                    <p>Nume Original: {contractWithLink.contract?.originalFileName}</p>
+                                    <p>Data Expirării: {contractWithLink.contract?.expirationDate!}</p>
 
-                                    {/* Download button with file download functionality */}
                                     <a
                                         href={contractWithLink.driveFileViewLink}
                                         download={contractWithLink.contract?.originalFileName} // This ensures the file is downloaded
                                         className={styles.downloadLink}
                                     >
-                                        <button className={styles.downloadButton}>Download File</button>
+                                        <button className={styles.downloadButton}>Descarcă Fișier</button>
                                     </a>
                                 </div>
                             ))}
                         </div>
                     ) : searchParams.cnp && !isLoading ? (
-                        <p>No contracts found.</p>
+                        <p>Niciun fișier găsit.</p>
                     ) : null}
                 </div>
             </div>
 
             {isModalOpen && <UploadContractModal onClose={() => setIsModalOpen(false)} />}
+
         </div>
     );
 };

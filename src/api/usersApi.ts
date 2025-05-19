@@ -11,11 +11,11 @@ export const usersApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
         getUsers: builder.query<User[], void>({
             query: () => 'users',
-            providesTags: ['Users'],
+            providesTags: [{ type: 'Users' }],
         }),
         getUserById: builder.query<User, string>({
             query: (id) => `users/${id}`,
-            providesTags: (result, error, id) => [{ type: 'Users', id }],
+            providesTags: [{ type: 'Users' }],
         }),
         createUser: builder.mutation<User, Partial<User>>({
             query: (body) => ({
@@ -23,7 +23,7 @@ export const usersApi = baseApi.injectEndpoints({
                 method: 'POST',
                 body,
             }),
-            invalidatesTags: ['Users'],
+            invalidatesTags: [{ type: 'Users' }],
         }),
         updateUser: builder.mutation<User, Partial<User>>({
             query: ({ id, ...body }) => ({
@@ -31,14 +31,14 @@ export const usersApi = baseApi.injectEndpoints({
                 method: 'PUT',
                 body,
             }),
-            invalidatesTags: (result, error, { id }) => [{ type: 'Users', id }],
+            invalidatesTags: [{ type: 'Users' }],
         }),
         deleteUser: builder.mutation<void, string>({
             query: (id) => ({
                 url: `users/${id}`,
                 method: 'DELETE',
             }),
-            invalidatesTags: ['Users'],
+            invalidatesTags: [{ type: 'Users' }],
         }),
     }),
 });
@@ -49,4 +49,4 @@ export const {
     useCreateUserMutation,
     useUpdateUserMutation,
     useDeleteUserMutation,
-} = usersApi; 
+} = usersApi;

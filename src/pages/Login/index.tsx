@@ -6,7 +6,7 @@ import styles from './style.module.scss';
 
  const Login = () => {
     const navigate = useNavigate();
-    const [loginUser, { isLoading, error }] = useLoginUserMutation();
+    const [loginUser, { isLoading }] = useLoginUserMutation();
     const [formData, setFormData] = useState<LoginUserDto>({
         email: '',
         password: ''
@@ -36,7 +36,7 @@ import styles from './style.module.scss';
     return (
         <div className={styles.loginContainer}>
             <div className={styles.loginForm}>
-                <h2>Login</h2>
+                <h2>Logare</h2>
                 <form onSubmit={handleSubmit}>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email</label>
@@ -50,7 +50,7 @@ import styles from './style.module.scss';
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Parola</label>
                         <input
                             type="password"
                             id="password"
@@ -59,6 +59,15 @@ import styles from './style.module.scss';
                             onChange={handleChange}
                             required
                         />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <button 
+                            type="button" 
+                            className={styles.forgotPasswordButton}
+                            onClick={() => navigate('/request-reset-password')}
+                        >
+                            Ai uitat parola?
+                        </button>
                     </div>
                     {errorMessage && (
                         <div className={styles.error}>
@@ -70,7 +79,7 @@ import styles from './style.module.scss';
                         disabled={isLoading}
                         className={styles.submitButton}
                     >
-                        {isLoading ? 'Logging in...' : 'Login'}
+                        {isLoading ? 'Conectare...' : 'Conectează-te'}
                     </button>
                 </form>
             </div>
