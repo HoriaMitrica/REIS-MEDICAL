@@ -5,7 +5,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './store/store';
 import { UnauthorizedLayout } from './components/UnauthorizedLayout/UnauthorizedLayout';
 import { AuthorizedLayout } from './components/AuthorizedLayout/AuthorizedLayout';
-import { RequireRole } from './components/RequireRole/RequireRole';
 import AboutUs from './pages/AboutUs';
 import MedicalServices from './pages/MedicalServices';
 import OccupationalMedicine from './pages/OccupationalMedicine';
@@ -22,7 +21,6 @@ import Promotions from './pages/Promotions';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import Upload from './pages/Upload';
 import ResetPassword from './pages/ResetPassword';
 import "./index.scss";
 import PasswordResetRequest from './pages/PasswordResetRequest';
@@ -54,14 +52,6 @@ function App() {
 
                 <Route path="/dashboard" element={<AuthorizedLayout />}>
                     <Route index element={<Dashboard />} />
-                    <Route
-                        path="upload"
-                        element={
-                            <RequireRole roles={['ADMIN', 'ACCOUNTANT']}>
-                                <Upload />
-                            </RequireRole>
-                        }
-                    />
                 </Route>
 
                 <Route path="*" element={<Navigate to="/login" replace />} />

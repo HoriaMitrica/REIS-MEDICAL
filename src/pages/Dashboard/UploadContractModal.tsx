@@ -8,10 +8,18 @@ const UploadContractModal = ({ onClose }: { onClose: () => void }) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<CreateWorkContractDto>();
     const [addContract, { isLoading }] = useAddContractMutation();
     const [error, setError] = useState<string | null>(null);
+    const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
 
     const onSubmit = async (data: CreateWorkContractDto) => {
         try {
-            await addContract(data).unwrap(); // Directly pass the data object
+            const formData = new FormData();
+            selectedFiles.forEach((file) => {
+                formData.append('files', file);
+            });
+            formData.append('cnp', data.cnp);
+            formData.append('expirationDate', data.expirationDate);
+
+            await addContract(formData).unwrap(); // Pass FormData object
             reset();
             onClose();
         } catch (err: any) {
@@ -19,19 +27,30 @@ const UploadContractModal = ({ onClose }: { onClose: () => void }) => {
         }
     };
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+            setSelectedFiles((prevFiles) => [...prevFiles, ...Array.from(e.target.files as FileList)]);
+        }
+    };
+
     return (
         <div className={styles.modalOverlay}>
             <div className={styles.modalContent}>
-                <h2>Încarcă Fișier</h2>
+                <h2>Încarcă Fișiere</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className={styles.formGroup}>
-                        <label htmlFor="file">Contract File</label>
+                        <label htmlFor="files">Contract Files</label>
                         <input 
                             type="file" 
-                            id="file" 
-                            accept=".pdf,.doc,.docx"
-                            {...register('file', { required: true })} 
+                            id="files" 
+                            multiple
+                            onChange={handleFileChange}
                         />
+                        <ul>
+                            {selectedFiles.map((file, index) => (
+                                <li key={index}>{file.name}</li>
+                            ))}
+                        </ul>
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="cnp">CNP</label>

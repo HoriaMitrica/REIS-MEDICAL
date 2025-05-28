@@ -1,7 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import {
-    CreateWorkContractDto,
-    WorkContract,
+    WorkContractDto,
     WorkContractWithDriveInfoDto,
 } from '../shared/generated-sources/index';
 import httpRequestHandler from '../shared/baseQueryHandler.function';
@@ -18,11 +17,11 @@ export const contractApi = createApi({
             }),
             providesTags: ['Contract'],
         }),
-        addContract: builder.mutation<WorkContract, CreateWorkContractDto>({
-            query: (contractToAdd) => ({
+        addContract: builder.mutation<WorkContractDto, FormData>({
+            query: (formData) => ({
                 url: '/contracts/upload',
                 method: 'POST',
-                body: contractToAdd,
+                body: formData,
             }),
             invalidatesTags: ['Contract'],
         }),
@@ -32,4 +31,4 @@ export const contractApi = createApi({
 export const {
     useSearchContractsQuery,
     useAddContractMutation,
-} = contractApi; 
+} = contractApi;

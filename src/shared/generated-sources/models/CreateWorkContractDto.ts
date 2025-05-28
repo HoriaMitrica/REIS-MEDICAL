@@ -3,7 +3,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export type CreateWorkContractDto = {
-    file: Blob;
+    files: Array<Blob>;
     cnp: string;
     expirationDate: string;
 };

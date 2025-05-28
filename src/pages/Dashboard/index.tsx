@@ -18,29 +18,26 @@ const Dashboard = () => {
 
     const { data, isLoading, error } = useSearchContractsQuery(
         { cnp: searchParams.cnp },
-        { skip: !searchParams.cnp } // Skip the request if no CNP is entered
+        { skip: !searchParams.cnp }
     );
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
-        setSearchParams({ cnp: searchTerm }); // Set the search params to the entered CNP
+        setSearchParams({ cnp: searchTerm });
     };
 
     useEffect(() => {
         if (data) {
             setContracts(data);
         }
-    }
-        , [data]);
-    console.log(contracts);
+    }, [data]);
 
     const isUploadAllowed = userRole[0] === 'ADMIN' || userRole[0] === 'ACCOUNTANT';
-    console.log(userRole[0]);
+
     return (
         <div className={styles.dashboard}>
-            <div className={styles.header}>
+            <header className={styles.header}>
                 <h1>Gestionare Fișiere</h1>
-                </div>
                 {isUploadAllowed && (
                     <button
                         className={styles.uploadButton}
@@ -50,7 +47,7 @@ const Dashboard = () => {
                     </button>
                 )}
                 <div className={styles.userWidget}>
-                    <p>Utilizator conectat: {userEmail}</p>
+                    <p> {userEmail}</p>
                     <button
                         className={styles.logoutButton}
                         onClick={() => {
@@ -64,53 +61,62 @@ const Dashboard = () => {
                         <button className={styles.resetPasswordButton}>Resetare parolă</button>
                     </Link>
                 </div>
+            </header>
 
-            <div className={styles.searchSection}>
-                <h2>Căutare Fișiere</h2>
-                <form onSubmit={handleSearch}>
-                    <div className={styles.searchBar}>
-                        <input
-                            type="text"
-                            placeholder="Introduceți CNP pentru căutare..."
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            className={styles.searchInput}
-                        />
-                        <button type="submit" className={styles.searchButton}>
-                            Caută
-                        </button>
-                    </div>
-                </form>
-
-                <div className={styles.results}>
-                    {isLoading && <p>Se caută fișiere...</p>}
-                    {error && <p className={styles.error}>Eroare la căutarea fișierelor. Vă rugăm să încercați din nou.</p>}
-                    { contracts.length > 0 ? (
-                        <div className={styles.contractsList}>
-                            {contracts.map((contractWithLink:WorkContractWithDriveInfoDto) => (
-                                <div key={contractWithLink.contract?.id} className={styles.contractCard}>
-                                    <h3>Fișier {contractWithLink.contract?.id}</h3>
-                                    <p>Nume Original: {contractWithLink.contract?.originalFileName}</p>
-                                    <p>Data Expirării: {contractWithLink.contract?.expirationDate!}</p>
-
-                                    <a
-                                        href={contractWithLink.driveFileViewLink}
-                                        download={contractWithLink.contract?.originalFileName} // This ensures the file is downloaded
-                                        className={styles.downloadLink}
-                                    >
-                                        <button className={styles.downloadButton}>Descarcă Fișier</button>
-                                    </a>
-                                </div>
-                            ))}
+            <main className={styles.mainContent}>
+                <section className={styles.searchSection}>
+                    <h2>Căutare Fișiere</h2>
+                    <form onSubmit={handleSearch} className={styles.searchForm}>
+                        <div className={styles.searchBar}>
+                            <input
+                                type="text"
+                                placeholder="Introduceți CNP pentru căutare..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className={styles.searchInput}
+                            />
+                            <button type="submit" className={styles.searchButton}>
+                                Caută
+                            </button>
                         </div>
-                    ) : searchParams.cnp && !isLoading ? (
-                        <p>Niciun fișier găsit.</p>
-                    ) : null}
-                </div>
-            </div>
+                    </form>
+
+                    <div className={styles.results}>
+                        {isLoading && <p>Se caută fișiere...</p>}
+                        {error && <p className={styles.error}>Eroare la căutarea fișierelor. Vă rugăm să încercați din nou.</p>}
+                        {contracts.length > 0 ? (
+                            <div className={styles.contractsList}>
+                                {contracts.map((contractWithLink: WorkContractWithDriveInfoDto) => (
+                                    <div key={contractWithLink.contract?.id} className={styles.contractCard}>
+                                        <h3>Fișier {contractWithLink.contract?.id}</h3>
+                                        <p>Nume Original: {contractWithLink.contract?.originalFileName}</p>
+                                        <p>Data Expirării: {contractWithLink.contract?.expirationDate!}</p>
+
+                                        <a
+                                            href={contractWithLink.driveFileViewLink}
+                                            download={contractWithLink.contract?.originalFileName} // This ensures the file is downloaded
+                                            className={styles.downloadLink}
+                                        >
+                                            <button className={styles.downloadButton}>Descarcă Fișier</button>
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        ) : searchParams.cnp && !isLoading ? (
+                            <p>Niciun fișier găsit.</p>
+                        ) : null}
+                    </div>
+                </section>
+            </main>
 
             {isModalOpen && <UploadContractModal onClose={() => setIsModalOpen(false)} />}
 
+            <footer className={styles.footer}>
+                <p>
+                    &copy; {new Date().getFullYear()} ReisMedical. All rights reserved by
+                    <a target="_blank" rel="noopener noreferrer" href="https://cleancodeit.com"> Clean Code Solutions</a>.
+                </p>
+            </footer>
         </div>
     );
 };

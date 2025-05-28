@@ -7,7 +7,6 @@ export type WorkContractDto = {
     userCnp: string;
     originalFileName: string;
     storedFileName: string;
-    googleDriveFileId: string;
     uploadDate: string;
     expirationDate: string;
 };

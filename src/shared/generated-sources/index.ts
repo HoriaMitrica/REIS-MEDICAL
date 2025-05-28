@@ -12,6 +12,5 @@ export type { ResetPasswordDto } from './models/ResetPasswordDto';
 export { RoleDto } from './models/RoleDto';
 export type { SuccessDto } from './models/SuccessDto';
 export type { UserDto } from './models/UserDto';
-export type { WorkContract } from './models/WorkContract';
 export type { WorkContractDto } from './models/WorkContractDto';
 export type { WorkContractWithDriveInfoDto } from './models/WorkContractWithDriveInfoDto';
