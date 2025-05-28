@@ -41,8 +41,8 @@ const Footer = () => {
 
             <div className={style.footerBottom}>
                 <p>
-                    &copy; {new Date().getFullYear()} Reis Medical. All rights reserved by 
-                    <a target="_blank" rel="noopener noreferrer" href="https://cleancode.ro"> Clean Code Solutions</a>.
+                    &copy; {new Date().getFullYear()} CleanCodeSolutions. All rights reserved by 
+                    <a target="_blank" rel="noopener noreferrer" href="https://cleancodeit.com"> Clean Code Solutions</a>.
                 </p>
             </div>
         </footer>

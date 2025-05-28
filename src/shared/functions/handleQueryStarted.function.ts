@@ -1,6 +1,6 @@
 import { BaseQueryFn, FetchArgs, FetchBaseQueryError, FetchBaseQueryMeta, QueryActionCreatorResult, QueryDefinition } from '@reduxjs/toolkit/query/react';
 
-export const handleQueryStartedFunction = async <T>(
+export const handleQueryStartedFunction = async <T, BaseQuery extends BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError, {}, FetchBaseQueryMeta>>(
     {
         dispatch,
         successActions,
@@ -8,7 +8,7 @@ export const handleQueryStartedFunction = async <T>(
     }: {
         dispatch: any;
         successActions: any[];
-        queryFulfilled: Promise<QueryActionCreatorResult<QueryDefinition<T, BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError, {}, FetchBaseQueryMeta>>>>
+        queryFulfilled: Promise<QueryActionCreatorResult<QueryDefinition<T, BaseQuery, string, unknown, string>>>
     }
 ) => {
     try {
